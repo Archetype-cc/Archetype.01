@@ -7,7 +7,7 @@ const url = require('url')
 const { exec } = require('child_process');
 const { init, share, getHex, args } = require('./init');
 const { mkProjectDir, mkArchetypeDir, rmArchetypeDir, mkDir, rmDir, writeFile, rmFile } = require('./lib/filesystem')
-const { createDat } = require('./lib/dat')
+const { createDat, versionDat } = require('./lib/dat')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -24,7 +24,8 @@ function createWindow() {
   mkArchetypeDir();
 
   mainWindow = new BrowserWindow({
-    width: 1024, height: 768, show: false
+    width: 1124, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false
+
   });
 
   // and load the index.html of the app.
@@ -50,7 +51,7 @@ function createWindow() {
     mainWindow.show();
     // Open the DevTools automatically if developing
     if ( dev ) {
-      mainWindow.webContents.openDevTools();
+      // mainWindow.webContents.openDevTools();
     }
   });
 
@@ -94,6 +95,8 @@ ipcMain.on('create-event', (event, dir) => {
   event.returnValue = 'pong'
 
 })
+
+ipcMain.on('ask-hex', (event, hex) => { versionDat(hex)})
 
 // ipcMain.on('create-project', (event, arg) => {
 //   mkDir("Assets/css")
