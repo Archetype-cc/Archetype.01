@@ -26,7 +26,7 @@ class Templates extends Component {
     return (
       <DescriptionContainer>
         <Heading>Choose an Archetype </Heading>
-        <Slides click={() => this.props.click()}/>
+        <Slides click={() => this.props.click("slides")} />
         <Music click={() => this.props.click()} />
         <Photo click={() => this.props.click()} />
         <Photo click={() => this.props.click()} />

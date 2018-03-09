@@ -30,13 +30,15 @@ class Home extends Component {
       showModalHex: false,
       showModal: false,
       name: '',
-      hex: ''
+      hex: '',
+      template: ''
     }
   }
 
-  update = () => {
+  update = (theme) => {
     this.setState({
-      showModal: true
+      showModal: true,
+      template: theme,
     })
   }
 
@@ -46,20 +48,21 @@ class Home extends Component {
     })
   }
 
+
   render () {
-    const { showModal } = this.state;
+    const { showModal, template } = this.state;
 
     return (
       <div>
         <Menu />
         <PageContainer>
         <ListArea />
-        <Templates click={this.update} />
+        <Templates click={this.update}  />
 
         {
           showModal
           ?
-          <Modal remove={this.remove} />
+          <Modal remove={this.remove} template={template} />
           :
           null
         }

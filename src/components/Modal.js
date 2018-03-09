@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
-const { writeDir } = require('electron').remote.require('./lib/filesystem') //
-const {foldersRemote} = require('electron').remote.require('./lib/remote') //
+const { createTheme, createFiles } = require('electron').remote.require('./lib/createTheme') //
+const { foldersRemote } = require('electron').remote.require('./lib/remote') //
 
 const ModalBox = styled.div `
   position: fixed;
@@ -57,8 +57,15 @@ class Modal extends Component {
     this.state = {
       value: "",
       showInput: true,
-      newFolder: true
+      newFolder: true,
+      template: this.props.template
     }
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      template: nextProps.template,
+    })
   }
 
   handleChange = (e) => {
@@ -75,12 +82,12 @@ class Modal extends Component {
 
         foldersRemote.readFolder().then(data => {
           if(data.includes(this.state.value)){
-            console.log('this folder exists');
+            // console.log('this folder exists');
             this.setState({
               newFolder: false
             });
           } else {
-            writeDir(this.state.value)
+            createTheme(this.state.value, this.state.template).then(createFiles(this.state.value, this.state.template));
             this.setState({
                showInput: false,
                newFolder: true
@@ -88,13 +95,14 @@ class Modal extends Component {
             setTimeout(() => { this.props.remove(); }, 1500);
           }
         })
-        
+
      }
   }
 
   render(){
 
-    const { showInput, value, newFolder } = this.state;
+    const { showInput, value, newFolder, template } = this.state;
+    console.log(template);
 
     return (
 

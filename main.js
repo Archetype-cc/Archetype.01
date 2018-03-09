@@ -7,6 +7,7 @@ const url = require('url')
 const { exec } = require('child_process');
 const { init, share, getHex, args } = require('./init');
 const { mkProjectDir, mkArchetypeDir, rmArchetypeDir, mkDir, rmDir, writeFile, rmFile } = require('./lib/filesystem')
+const { watch } = require('./lib/watch')
 const { createDat, versionDat } = require('./lib/dat')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -22,7 +23,7 @@ if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) 
 function createWindow() {
 
   mkArchetypeDir();
-
+  watch();
   mainWindow = new BrowserWindow({
     width: 1124, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false
 
@@ -92,7 +93,7 @@ ipcMain.on('create-event', (event, dir) => {
   writeFile(dir + "/", "index.html", "hello Word");
   writeFile(dir + "/", "dat.json", "metadata");
   createDat(dir)
-  event.returnValue = 'pong'
+  // event.returnValue = 'pong'
 
 })
 
