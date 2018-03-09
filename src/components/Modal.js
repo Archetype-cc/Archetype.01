@@ -102,7 +102,6 @@ class Modal extends Component {
   render(){
 
     const { showInput, value, newFolder, template } = this.state;
-    console.log(template);
 
     return (
 

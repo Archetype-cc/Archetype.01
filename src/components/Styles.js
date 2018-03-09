@@ -6,17 +6,16 @@ const Flex1 = styled.div `
 
 const ThemeBox = styled.button `
   flex : 1;
-  border: 1px solid white;
   width: 100%;
   float: left;
-  margin: 5px;
+  margin-bottom: 35px;
   max-height: 300px;
   color: white;
   background-color: #0B0D0B;
   padding: 0;
+  border: none;
 
   &:hover {
-      border: 3px solid #E58E73;
       cursor: pointer;
 `;
 

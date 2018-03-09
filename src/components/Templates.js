@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Music from './themes/Music';
-import Photo from './themes/Photo';
-import Slides from './themes/Slides';
+import Theme from './themes/Theme';
 
 const DescriptionContainer = styled.div `
   flex : 1;
@@ -26,12 +24,13 @@ class Templates extends Component {
     return (
       <DescriptionContainer>
         <Heading>Choose an Archetype </Heading>
-        <Slides click={() => this.props.click("slides")} />
-        <Music click={() => this.props.click("music")} />
-        <Photo click={() => this.props.click("photo")} />
-        <Photo click={() => this.props.click("photo")} />
-        <Slides click={() => this.props.click("slides")} />
-        <Music click={() => this.props.click("music")} />
+
+        <Theme click={() => this.props.click("photo")} type={"photo"} />
+        <Theme click={() => this.props.click("slides")} type={"slides"}/>
+        <Theme click={() => this.props.click("music")} type={"music"} />
+        <Theme click={() => this.props.click("slides")} type={"slides"}/>
+        <Theme click={() => this.props.click("music")} type={"music"} />
+        <Theme click={() => this.props.click("photo")} type={"photo"} />
 
       </DescriptionContainer>
     )
