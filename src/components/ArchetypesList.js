@@ -5,16 +5,15 @@ const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
 const {foldersRemote} = require('electron').remote.require('./lib/remote') // bar
+const {shell} = require('electron');
 
 argv.loc = argv.loc || path.join(userHome, '/Archetype');
 
-const FolderList = styled.div `
-
+const FolderListContainer = styled.div `
   height: 15rem;
   width: 100%;
   position: static;
   overflow: scroll;
-
 `
 
 const SpanSync = styled.span `
@@ -29,6 +28,16 @@ const LinkFolder = styled.a `
   text-decoration: none;
 `
 
+const FolderLi = styled.li `
+  cursor: pointer;
+`
+const LinktoDat = styled.span `
+  color: #E58E73;
+  font-size: 18px;
+  float: right;
+  margin-right: 15px;
+`
+
 
 class ArchetypesList extends Component {
   constructor(props){
@@ -38,33 +47,42 @@ class ArchetypesList extends Component {
     }
   }
 
+  openLink = (folder) => (e) => {
+    shell.showItemInFolder(`${argv.loc}/${folder}`);
+  }
+
+  openWebsite = (dir) => (e) => {
+    shell.openExternal(`${dir}`);
+  }
+
   componentWillMount() {
     foldersRemote.readFolder().then(data => { this.setState({ folders: data })})
   }
 
   render() {
-      // console.log(this.state.folders);
-      const { folders } = this.state;
-
+    // console.log(this.state.folders);
+    const { folders } = this.state;
 
     return  (
 
       <div>
         <p> My Archetypes </p>
-        <FolderList>
+        <FolderListContainer>
           <ul>
 
           {
             folders.map((folder, i) =>  {
-                console.log(folder, i);
               if (folder !== '.DS_Store' && folder !== ".archetype.lock" && folder !== ".dat") {
-                return  <li><LinkFolder key={folder} href={`file:///${argv.loc}/${folder}/`} target="_blank"> {folder} </LinkFolder></li>
+                return  <FolderLi >
+                <LinkFolder key={folder} onClick={this.openLink(folder)}> {folder} </LinkFolder>
+                <LinktoDat onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
+                </FolderLi>
               }
             })
           }
 
           </ul>
-        </FolderList>
+        </FolderListContainer>
       </div>
 
     )

@@ -40,6 +40,7 @@
     "electron-default-menu": "^1.0.1",
     "electron-window": "^0.8.1",
     "js-yaml": "^3.10.0",
+    "lodash": "^4.17.5",
     "minimist": "^1.2.0",
     "random-access-memory": "^2.4.0",
     "user-home": "^2.0.0"

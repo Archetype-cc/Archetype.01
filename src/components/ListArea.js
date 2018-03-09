@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ArchetypesList from './ArchetypesList';
+const path = require('path');
+var userHome = require('user-home');
+var argv = require('minimist')(process.argv.slice(2));
+const {shell} = require('electron');
+argv.loc = argv.loc || path.join(userHome, '/Archetype');
 
 const DescriptionContainer = styled.div `
   flex : 1;
@@ -36,16 +41,23 @@ const Button = styled.button `
 
 
 class ListArea extends Component {
+  openLink = (e) => {
+    shell.showItemInFolder(`${argv.loc}`);
+  }
+
+  openWebsite = (e) => {
+    shell.openExternal(`http://www.archetype.cc`);
+  }
+
   render() {
-    console.log(this.props);
     return  <DescriptionContainer>
 
         <Heading>CREATE, SHARE & DISTRIBUTE YOUR OWN ARTWORK.</Heading>
         <Line />
         <ArchetypesList />
         <hr></hr>
-        <Button> My Archetype Folder</Button>
-        <Button> Archetype Website</Button>
+        <Button onClick={this.openLink}> My Archetype Folder</Button>
+        <Button onClick={this.openWebsite}> Archetype Website</Button>
         <Button> Archetype Github</Button>
         <Button> Archetype Github</Button>
 

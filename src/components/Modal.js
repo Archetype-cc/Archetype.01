@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-const { writeDir } = require('electron').remote.require('./lib/filesystem') // bar
+import _ from 'lodash';
+const { writeDir } = require('electron').remote.require('./lib/filesystem') //
+const {foldersRemote} = require('electron').remote.require('./lib/remote') //
 
 const ModalBox = styled.div `
   position: fixed;
@@ -38,42 +40,61 @@ const Cross = styled.button `
   cursor: pointer;
   border: none;
   background: rgba(16, 16, 16, 0.05);
-
 `
 
+const Name = styled.span `
+  color: #E58E73
+`
 
+const ExistingFolder = styled.div `
+  position: absolute;
+  margin-top: 100px;
+`
 
 class Modal extends Component {
   constructor(props){
     super(props);
     this.state = {
       value: "",
-      showInput: true
+      showInput: true,
+      newFolder: true
     }
   }
 
   handleChange = (e) => {
-   this.setState({ value: e.target.value });
+   this.setState({
+     value: _.capitalize(e.target.value),
+     newFolder: true
+    });
   }
 
   keyPress = (e) => {
      if(e.keyCode == 13){
-        this.setState({
-           value: e.target.value,
-           showInput: false
-          });
-          setTimeout(() => { this.props.remove(); }, 3000);
 
-          writeDir(this.state.value)
-          foldersRemote
+        this.setState({ value: _.capitalize(e.target.value)});
 
+        foldersRemote.readFolder().then(data => {
+          if(data.includes(this.state.value)){
+            console.log('this folder exists');
+            this.setState({
+              newFolder: false
+            });
+          } else {
+            writeDir(this.state.value)
+            this.setState({
+               showInput: false,
+               newFolder: true
+            });
+            setTimeout(() => { this.props.remove(); }, 1500);
+          }
+        })
+        
      }
   }
 
   render(){
-    console.log(this.state.value);
-    console.log(this.props)
-    const { showInput, value } = this.state;
+
+    const { showInput, value, newFolder } = this.state;
 
     return (
 
@@ -86,8 +107,18 @@ class Modal extends Component {
           <InputBox type='text' placeholder="Name of your project" value={value} onKeyDown={this.keyPress} onChange={this.handleChange}
           />
           :
-          <h1> {value} folder was created in your computer </h1>
+          <h1> <Name>{value}</Name> folder was created in your computer </h1>
 
+        }
+
+        {
+          newFolder
+          ?
+          null
+          :
+          <ExistingFolder>
+            <p> This Folder Exists </p>
+          </ExistingFolder>
         }
 
 
