@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+const { writeDir } = require('electron').remote.require('./lib/filesystem') // bar
 
 const ModalBox = styled.div `
   position: fixed;
@@ -43,14 +44,53 @@ const Cross = styled.button `
 
 
 class Modal extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: "",
+      showInput: true
+    }
+  }
+
+  handleChange = (e) => {
+   this.setState({ value: e.target.value });
+  }
+
+  keyPress = (e) => {
+     if(e.keyCode == 13){
+        this.setState({
+           value: e.target.value,
+           showInput: false
+          });
+          setTimeout(() => { this.props.remove(); }, 3000);
+
+          writeDir(this.state.value)
+          foldersRemote
+
+     }
+  }
 
   render(){
+    console.log(this.state.value);
+    console.log(this.props)
+    const { showInput, value } = this.state;
 
     return (
 
       <ModalBox  >
         <Cross onClick={() => this.props.remove()} > X </Cross>
-        <InputBox type='text' placeholder="Name of your project" />
+
+        {
+          showInput
+          ?
+          <InputBox type='text' placeholder="Name of your project" value={value} onKeyDown={this.keyPress} onChange={this.handleChange}
+          />
+          :
+          <h1> {value} folder was created in your computer </h1>
+
+        }
+
+
       </ModalBox>
     )
   }

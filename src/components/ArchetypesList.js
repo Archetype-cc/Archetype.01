@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
+const {foldersRemote} = require('electron').remote.require('./lib/remote') // bar
 
 argv.loc = argv.loc || path.join(userHome, '/Archetype');
 
@@ -21,35 +22,47 @@ const SpanSync = styled.span `
   font-size: 16px;
 `
 
-fs.readdir(argv.loc, (e, archeFolders) => {
-  archeFolders.forEach(f => {
-    if (f !== '.DS_Store' && f !== ".archetype.lock" && f !== ".dat") {
-      console.log(f);
-    }
-  });
-});
+const LinkFolder = styled.a `
+  font-size: 28px;
+  color: white;
+  margin-bottom: 40px;
+  text-decoration: none;
+`
 
 
 class ArchetypesList extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      folders:[]
+    }
+  }
+
+  componentWillMount() {
+    foldersRemote.readFolder().then(data => { this.setState({ folders: data })})
+  }
+
   render() {
+      // console.log(this.state.folders);
+      const { folders } = this.state;
+
+
     return  (
 
       <div>
         <p> My Archetypes </p>
         <FolderList>
           <ul>
-            <li> Portfolio  <SpanSync> – Sync </SpanSync> </li>
-            <li> Photography Website <SpanSync> – Sync </SpanSync> </li>
-            <li> Punk Rock Band <SpanSync style={{color:"#E58E73"}}> – Sync </SpanSync> </li>
-            <li> Other Website <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 5 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 6 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 7 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 8 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 9 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 10 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 11 <SpanSync> – Sync </SpanSync> </li>
-            <li> Archetype folder 12 <SpanSync> – Sync </SpanSync> </li>
+
+          {
+            folders.map((folder, i) =>  {
+                console.log(folder, i);
+              if (folder !== '.DS_Store' && folder !== ".archetype.lock" && folder !== ".dat") {
+                return  <li><LinkFolder key={folder} href={`file:///${argv.loc}/${folder}/`} target="_blank"> {folder} </LinkFolder></li>
+              }
+            })
+          }
+
           </ul>
         </FolderList>
       </div>
