@@ -73,9 +73,9 @@ class ArchetypesList extends Component {
           {
             folders.map((folder, i) =>  {
               if (folder !== '.DS_Store' && folder !== ".archetype.lock" && folder !== ".dat") {
-                return  <FolderLi >
-                <LinkFolder key={folder} onClick={this.openLink(folder)}> {folder} </LinkFolder>
-                <LinktoDat onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
+                return  <FolderLi key={i} >
+                <LinkFolder key={i} onClick={this.openLink(folder)}> {folder} </LinkFolder>
+                <LinktoDat key={folder} onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
                 </FolderLi>
               }
             })

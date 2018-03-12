@@ -25,12 +25,12 @@ class Templates extends Component {
       <DescriptionContainer>
         <Heading>Choose an Archetype </Heading>
 
-        <Theme click={() => this.props.click("photo")} type={"photo"} />
-        <Theme click={() => this.props.click("slides")} type={"slides"}/>
-        <Theme click={() => this.props.click("music")} type={"music"} />
-        <Theme click={() => this.props.click("slides")} type={"slides"}/>
-        <Theme click={() => this.props.click("music")} type={"music"} />
-        <Theme click={() => this.props.click("photo")} type={"photo"} />
+        <Theme click={() => this.props.click("photo")} type={"photo"} name={"Photo AA."}/>
+        <Theme click={() => this.props.click("slides")} type={"slides"} name={"Slides AA."}/>
+        <Theme click={() => this.props.click("music")} type={"music"}  name={"Music AA."}/>
+        <Theme click={() => this.props.click("slides")} type={"slides"} name={"Slides BB."}/>
+        <Theme click={() => this.props.click("music")} type={"music"} name={"Music BB."} />
+        <Theme click={() => this.props.click("photo")} type={"photo"} name={"Photo BB."} />
 
       </DescriptionContainer>
     )

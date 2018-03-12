@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { ThemeBox } from '../Styles';
-import Them3 from './static/web3.jpg';
-import Them2 from './static/web2.png';
-import Them1 from './static/photo.png';
+import SlidesIMG from './static/slides.png';
+import MusicIMG from './static/music.png';
+import PhotosIMG from './static/photos.png';
 import Switch, { Case, Default } from 'react-switch-case';
 
 const ThemeImage = styled.img `
   max-height: 297;
   width: 100%;
   padding: 0;
-  filter: "grayscale(100%)";
   border: 5px solid white;
   margin-bottom: 30px;
 
   &:hover {
     border: 5px solid #E58E73;
-
   }
+`
+
+const TitleTheme = styled.p `
+  text-align: left;
 `
 
 class Theme extends Component {
@@ -25,28 +27,29 @@ class Theme extends Component {
     super(props);
     this.state = {
       type: this.props.type,
+      name: this.props.name,
     }
   }
 
   render() {
-    const { type } = this.state;
+    const { type, name } = this.state;
     let componentShow = type;
 
     return (
       <ThemeBox>
         <div onClick={() => this.props.click()}>
         <Switch condition={componentShow}>
+          <Case value={'photo'}>
+            <TitleTheme> {name} </TitleTheme>
+            <ThemeImage src={PhotosIMG} />
+          </Case>
           <Case value={'slides'}>
-            <p> {type} </p>
-            <ThemeImage src={Them3}  />
+            <TitleTheme> {name} </TitleTheme>
+            <ThemeImage src={SlidesIMG}  />
           </Case>
           <Case value={'music'}>
-            <p> {type} </p>
-            <ThemeImage src={Them2} />
-          </Case>
-          <Case value={'photo'}>
-            <p> {type} </p>
-            <ThemeImage src={Them1} />
+            <TitleTheme> {name} </TitleTheme>
+            <ThemeImage src={MusicIMG} />
           </Case>
         </Switch>
 

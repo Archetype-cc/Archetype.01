@@ -12,7 +12,8 @@ injectGlobal`
     padding: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-
+    letter-spacing: 0.06em;
+    -webkit-text-size-adjust: 100%;
   }
 
   ul {
