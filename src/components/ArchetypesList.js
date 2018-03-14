@@ -38,6 +38,14 @@ const LinktoDat = styled.span `
   margin-right: 15px;
 `
 
+const SyncSpan = styled.span `
+  border: none;
+  color: #3a3636;
+  font-size: 8px;
+  padding: 3px;
+  margin-top: -1px;
+`
+
 
 class ArchetypesList extends Component {
   constructor(props){
@@ -74,7 +82,7 @@ class ArchetypesList extends Component {
             folders.map((folder, i) =>  {
               if (folder !== '.DS_Store' && folder !== ".archetype.lock" && folder !== ".dat") {
                 return  <FolderLi key={i} >
-                <LinkFolder key={i} onClick={this.openLink(folder)}> {folder} </LinkFolder>
+                <LinkFolder key={i} onClick={this.openLink(folder)}> {folder} <SyncSpan> Sync </SyncSpan> </LinkFolder>
                 <LinktoDat key={folder} onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
                 </FolderLi>
               }

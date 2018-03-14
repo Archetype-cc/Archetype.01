@@ -32,6 +32,7 @@ const Button = styled.button `
   margin: 40px 5px 40px 5px;
   float: left;
   padding: 10px;
+  width: 120px;
 
   &:hover {
     border: 1px solid #E58E73;
@@ -52,14 +53,14 @@ class ListArea extends Component {
   render() {
     return  <DescriptionContainer>
 
-        <Heading>CREATE, SHARE & DISTRIBUTE YOUR OWN ARTWORK.</Heading>
+        <Heading>CREATE, EXHIBIT & DISTRIBUTE YOUR ARTWORK.</Heading>
         <Line />
         <ArchetypesList />
         <hr></hr>
-        <Button onClick={this.openLink}> My Archetype Folder</Button>
-        <Button onClick={this.openWebsite}> Archetype Website</Button>
-        <Button> Archetype Github</Button>
-        <Button> Archetype Github</Button>
+        <Button onClick={this.openLink}> My Archetypes </Button>
+        <Button onClick={this.openWebsite}> Archetype.cc </Button>
+        <Button> Help & FAQ</Button>
+        <Button> Developers </Button>
 
       </DescriptionContainer>;
   }
