@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "async": "^2.6.0",
+    "chokidar": "^2.0.2",
     "dat": "^13.10.0",
     "dat-node": "^3.5.8",
     "electron-default-menu": "^1.0.1",

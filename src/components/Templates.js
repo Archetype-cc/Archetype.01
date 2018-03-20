@@ -27,15 +27,42 @@ const ImportInput = styled.input `
   letter-spacing: 0.3px;
 `
 
-class Templates extends Component {
 
+
+
+class Templates extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      template: "",
+      showInput: true,
+      newFolder: true,
+    }
+  }
+
+
+  handleChange = (e) => {
+   this.setState({
+     template: e.target.value,
+     newFolder: true
+    });
+  }
+
+  keyPress = (e) => {
+     if(e.keyCode == 13){
+
+        this.setState({ value: e.target.value});
+        this.props.click(this.state.template);
+
+     }
+  }
 
   render() {
 
     return (
       <DescriptionContainer>
         <Heading>Choose an Archetype or Fork? a Website. </Heading>
-        <ImportInput type="text" placeholder="dat://2es4w56sd6dff...."/>
+        <ImportInput type="text" placeholder="dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Theme click={() => this.props.click("photo")} type={"photo"} name={"Another Photo Grid Theme"}/>
         <Theme click={() => this.props.click("slides")} type={"slides"} name={"Slidezz"}/>
         <Theme click={() => this.props.click("music")} type={"music"}  name={"Sound"}/>
