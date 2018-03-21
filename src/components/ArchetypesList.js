@@ -5,7 +5,7 @@ const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
 const {foldersRemote} = require('electron').remote.require('./lib/remote') //
-const {syncDat} = require('electron').remote.require('./lib/createTheme') // bar
+const {syncDat, startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/createTheme') // bar
 
 const {shell} = require('electron');
 
@@ -49,7 +49,14 @@ const SynctoDat = styled.span `
   float: right;
   margin-right: 15px;
   cursor: pointer;
+`
 
+const Preview = styled.span `
+  color: grey;
+  font-size: 18px;
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
 `
 
 const SyncSpan = styled.button `
@@ -67,7 +74,9 @@ class ArchetypesList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      folders:[]
+      folders:[],
+      serving: false,
+      color: 'grey'
     }
   }
 
@@ -81,6 +90,18 @@ class ArchetypesList extends Component {
 
   sync = (folder) => (e) => {
     syncDat(folder);
+  }
+
+  preview = (folder, port) => (e) => {
+    startLocalServer(folder, port);
+    console.log('pressing');
+    this.setState({serving: true, color: "#E58E73"})
+    if(!this.state.serving){
+      shell.openExternal(`http://localhost:${port}/`);
+    } else {
+      stopLocalServer();
+      this.setState({serving: false, color: "grey"})
+    }
   }
 
   componentWillMount() {
@@ -104,6 +125,7 @@ class ArchetypesList extends Component {
                 return  <FolderLi key={i} >
                 <LinkFolder key={i} onClick={this.openLink(folder)}> {folder}  </LinkFolder>
                 <SynctoDat key={folder[i]} onClick={this.sync(folder)} > ⟿ </SynctoDat>
+                <Preview key={i+folder} onClick={this.preview(folder, i*1000)} style={{color:this.state.color}} > view </Preview>
                 <LinktoDat key={folder} onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
                 </FolderLi>
               }

@@ -9,3 +9,4 @@
 - [ ] Watch folder changes to sync
 - [ ] Create Archetype Index with sublinks
 - [ ] Pass dat link to GUI
+- [ ] Preview Theme on port

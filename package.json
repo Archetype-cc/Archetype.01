@@ -40,12 +40,14 @@
     "dat-node": "^3.5.8",
     "electron-default-menu": "^1.0.1",
     "electron-window": "^0.8.1",
+    "express": "^4.16.3",
     "fs-extra": "^5.0.0",
     "js-yaml": "^3.10.0",
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
     "random-access-memory": "^2.4.0",
     "react-switch-case": "^1.0.3",
+    "stoppable": "^1.0.5",
     "user-home": "^2.0.0"
   }
 }
