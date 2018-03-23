@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Folder from './Folder';
 const path = require('path');
 const fs = require('fs');
 var userHome = require('user-home');
@@ -9,8 +10,6 @@ const {syncDat, startLocalServer, stopLocalServer} = require('electron').remote.
 
 const {shell} = require('electron');
 
-argv.loc = argv.loc || path.join(userHome, '/Archetype');
-
 const FolderListContainer = styled.div `
   height: 15rem;
   width: 100%;
@@ -18,94 +17,19 @@ const FolderListContainer = styled.div `
   overflow: scroll;
 `
 
-const SpanSync = styled.span `
-  color: grey;
-  font-size: 16px;
-`
-
-const LinkFolder = styled.a `
-  font-size: 28px;
-  color: white;
-  margin-bottom: 40px;
-  text-decoration: none;
-  cursor: pointer;
-
-`
-
-const FolderLi = styled.li `
-  cursor: auto;
-`
-const LinktoDat = styled.span `
-  color: #E58E73;
-  font-size: 18px;
-  float: right;
-  margin-right: 15px;
-  cursor: pointer;
-`
-
-const SynctoDat = styled.span `
-  color: grey;
-  font-size: 18px;
-  float: right;
-  margin-right: 15px;
-  cursor: pointer;
-`
-
-const Preview = styled.span `
-  color: grey;
-  font-size: 18px;
-  float: right;
-  margin-right: 15px;
-  cursor: pointer;
-`
-
-const SyncSpan = styled.button `
-  border: none;
-  color: pink;
-  font-size: 8px;
-  padding: 0px;
-  margin-top: 0px;
-  cursor: pointer;
-  float: right;
-`
 
 
 class ArchetypesList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      folders:[],
-      serving: false,
-      color: 'grey'
+      folders: []
     }
   }
 
-  openLink = (folder) => (e) => {
-    shell.showItemInFolder(`${argv.loc}/${folder}`);
-  }
-
-  openWebsite = (dir) => (e) => {
-    shell.openExternal(`${dir}`);
-  }
-
-  sync = (folder) => (e) => {
-    syncDat(folder);
-  }
-
-  preview = (folder, port) => (e) => {
-    startLocalServer(folder, port);
-    console.log('pressing');
-    this.setState({serving: true, color: "#E58E73"})
-    if(!this.state.serving){
-      shell.openExternal(`http://localhost:${port}/`);
-    } else {
-      stopLocalServer();
-      this.setState({serving: false, color: "grey"})
-    }
-  }
 
   componentWillMount() {
-    foldersRemote.readFolder().then(data => { this.setState({ folders: data })})
+    foldersRemote.readFolder().then(folders =>  this.setState({ folders }))
   }
 
   render() {
@@ -120,14 +44,9 @@ class ArchetypesList extends Component {
           <ul>
 
           {
-            folders.map((folder, i) =>  {
-              if (folder !== '.DS_Store' && folder !== ".archetype.lock" && folder !== ".dat") {
-                return  <FolderLi key={i} >
-                <LinkFolder key={i} onClick={this.openLink(folder)}> {folder}  </LinkFolder>
-                <SynctoDat key={folder[i]} onClick={this.sync(folder)} > ⟿ </SynctoDat>
-                <Preview key={i+folder} onClick={this.preview(folder, i*1000)} style={{color:this.state.color}} > view </Preview>
-                <LinktoDat key={folder} onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
-                </FolderLi>
+            folders.map((name, i) =>  {
+              if (name !== '.DS_Store' && name !== ".archetype.lock" && name !== ".dat") {
+                return  <Folder key={i} folderName={name} port={i*1000} />
               }
             })
           }

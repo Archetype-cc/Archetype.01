@@ -53,7 +53,7 @@ class ListArea extends Component {
   render() {
     return  <DescriptionContainer>
 
-        <Heading>CREATE, EXHIBIT & DISTRIBUTE YOUR ARTWORK.</Heading>
+        <Heading>CREATE, EXHIBIT & SHARE YOUR ARTWORK.</Heading>
         <Line />
         <ArchetypesList />
         <hr></hr>
