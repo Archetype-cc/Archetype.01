@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
-const { createTheme, createFiles } = require('electron').remote.require('./lib/createTheme') //
+const { createTheme, createFiles } = require('electron').remote.require('./lib/create') //
 const { foldersRemote } = require('electron').remote.require('./lib/remote') //
 
 const ModalBox = styled.div `

@@ -5,7 +5,8 @@ const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
 const {foldersRemote} = require('electron').remote.require('./lib/remote') //
-const {syncDat, startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/createTheme') // bar
+const {syncDat} = require('electron').remote.require('./lib/create') // bar
+const {startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/preview') // bar
 
 const {shell} = require('electron');
 

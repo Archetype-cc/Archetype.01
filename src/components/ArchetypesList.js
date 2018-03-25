@@ -6,9 +6,7 @@ const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
 const {foldersRemote} = require('electron').remote.require('./lib/remote') //
-const {syncDat, startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/createTheme') // bar
-
-const {shell} = require('electron');
+const {syncDat} = require('electron').remote.require('./lib/create') // bar
 
 const FolderListContainer = styled.div `
   height: 15rem;
@@ -16,8 +14,6 @@ const FolderListContainer = styled.div `
   position: static;
   overflow: scroll;
 `
-
-
 
 class ArchetypesList extends Component {
   constructor(props){
