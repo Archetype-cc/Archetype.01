@@ -25,6 +25,11 @@ const Line = styled.div `
   background: white;
 `
 
+const Beta = styled.div `
+  color: white;
+  padding-top: 3rem;
+`
+
 const Button = styled.button `
   background: none;
   border: 1px solid white;
@@ -46,8 +51,8 @@ class ListArea extends Component {
     shell.showItemInFolder(`${argv.loc}`);
   }
 
-  openWebsite = (e) => {
-    shell.openExternal(`http://www.archetype.cc`);
+  openWeb = (url) => {
+    shell.openExternal(`${url}`);
   }
 
   render() {
@@ -57,10 +62,11 @@ class ListArea extends Component {
         <Line />
         <ArchetypesList />
         <hr></hr>
+        <Beta> This is a Beta Release, Please report any Bugs or Problems.</Beta>
         <Button onClick={this.openLink}> My Archetypes </Button>
-        <Button onClick={this.openWebsite}> Archetype.cc </Button>
-        <Button> Help & FAQ</Button>
-        <Button> Developers </Button>
+        <Button onClick={() =>  this.openWeb('https://archetype.cc')}> Archetype.cc </Button>
+        <Button onClick={() => this.openWeb('https://archetype.cc')}> Feedback </Button>
+        <Button onClick={() => this.openWeb('https://github.io/archetype-cc')}> Developers </Button>
 
       </DescriptionContainer>;
   }

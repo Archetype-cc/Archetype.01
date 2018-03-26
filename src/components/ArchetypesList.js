@@ -15,6 +15,10 @@ const FolderListContainer = styled.div `
   overflow: scroll;
 `
 
+const Ulist = styled.ul `
+  line-height: 2.6rem;
+`
+
 class ArchetypesList extends Component {
   constructor(props){
     super(props);
@@ -23,21 +27,25 @@ class ArchetypesList extends Component {
     }
   }
 
-
   componentWillMount() {
+    foldersRemote.readFolder().then(folders =>  this.setState({ folders }))
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log("hitting")
     foldersRemote.readFolder().then(folders =>  this.setState({ folders }))
   }
 
   render() {
     const { folders } = this.state;
-    console.log(this.state.folders);
+    // console.log(this.state.folders);
 
     return  (
 
       <div>
         <p> My Archetypes </p>
         <FolderListContainer>
-          <ul>
+          <Ulist>
 
           {
             folders.map((name, i) =>  {
@@ -47,7 +55,7 @@ class ArchetypesList extends Component {
             })
           }
 
-          </ul>
+        </Ulist>
         </FolderListContainer>
       </div>
 

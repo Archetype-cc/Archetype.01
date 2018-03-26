@@ -80,12 +80,9 @@ class Folder extends Component {
     shell.showItemInFolder(`${argv.loc}/${folderName}`);
   }
 
-  openWebsite = () => {
-    const { folderName } = this.props;
-
-    shell.openExternal(folderName);
+  openWeb = (url) => {
+    shell.openExternal(`${url}`);
   }
-
   sync = () => {
     const { folderName } = this.props;
     syncDat(folderName);
@@ -114,12 +111,12 @@ class Folder extends Component {
     const { folderName } = this.props;
 
     return (
-      <div>
+      <FolderLi>
         <LinkFolder onClick={this.openLink}> {folderName}  </LinkFolder>
         <SynctoDat onClick={this.sync} > ⟿ </SynctoDat>
         <Preview onClick={this.preview} style={{color:this.state.color}} > ∴ </Preview>
-        <LinktoDat onClick={this.openWebsite("dat://57c19e591cdce8b7287a8f13ac5992ed38e44b272f137797d9039470d9fb4d2c/")} > ⋯ </LinktoDat>
-      </div>
+        <LinktoDat onClick={() => this.openWeb('dat://archetype.cc')} > ⋯ </LinktoDat>
+      </FolderLi>
     )
   }
 }

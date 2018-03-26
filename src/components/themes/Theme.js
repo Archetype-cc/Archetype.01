@@ -4,6 +4,7 @@ import { ThemeBox } from '../Styles';
 import SlidesIMG from './static/slides.png';
 import MusicIMG from './static/music.png';
 import PhotosIMG from './static/photos.png';
+import MoreIMG from './static/more.png';
 import Switch, { Case, Default } from 'react-switch-case';
 
 const ThemeImage = styled.img `
@@ -38,25 +39,21 @@ class Theme extends Component {
     return (
       <ThemeBox>
         <div onClick={() => this.props.click()}>
-        <Switch condition={componentShow}>
-          <Case value={'photo'}>
-            <TitleTheme> {name} </TitleTheme>
-            <ThemeImage src={PhotosIMG} />
-          </Case>
-          <Case value={'slides'}>
-            <TitleTheme> {name} </TitleTheme>
-            <ThemeImage src={SlidesIMG}  />
-          </Case>
-          <Case value={'music'}>
-            <TitleTheme> {name} </TitleTheme>
-            <ThemeImage src={MusicIMG} />
-          </Case>
-        </Switch>
-
+          <Switch condition={componentShow}>
+            <Case value={'photo'}>
+              <TitleTheme> {name} </TitleTheme>
+              <ThemeImage src={PhotosIMG} />
+            </Case>
+            <Case value={'slides'}>
+              <TitleTheme> {name} </TitleTheme>
+              <ThemeImage src={SlidesIMG}  />
+            </Case>
+            <Case value={'more'}>
+              <TitleTheme> {name} </TitleTheme>
+              <ThemeImage src={MoreIMG} />
+            </Case>
+          </Switch>
         </div>
-
-
-
       </ThemeBox>
     )
   }

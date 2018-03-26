@@ -27,6 +27,10 @@ const ImportInput = styled.input `
   letter-spacing: 0.3px;
 `
 
+const More = styled.div `
+  padding-top: 3rem;
+`
+
 
 
 
@@ -61,15 +65,10 @@ class Templates extends Component {
 
     return (
       <DescriptionContainer>
-        <Heading>Choose an Archetype or Fork? a Website. </Heading>
-        <ImportInput type="text" placeholder="dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
+        <Heading>Choose an Archetype or Fork a Website you like. </Heading>
+        <ImportInput type="text" placeholder="To fork paste a dat link here. Ex. dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Theme click={() => this.props.click("photo")} type={"photo"} name={"Another Photo Grid Theme"}/>
         <Theme click={() => this.props.click("slides")} type={"slides"} name={"Slidezz"}/>
-        <Theme click={() => this.props.click("music")} type={"music"}  name={"Sound"}/>
-        <Theme click={() => this.props.click("slides")} type={"slides"} name={"Slides BB."}/>
-        <Theme click={() => this.props.click("music")} type={"music"} name={"Music BB."} />
-        <Theme click={() => this.props.click("photo")} type={"photo"} name={"Photo BB."} />
-
       </DescriptionContainer>
     )
   }
