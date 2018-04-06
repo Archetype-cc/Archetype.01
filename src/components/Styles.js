@@ -17,6 +17,7 @@ const ThemeBox = styled.button `
 
   &:hover {
       cursor: pointer;
+  }
 `;
 
 

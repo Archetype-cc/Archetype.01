@@ -19,7 +19,7 @@ function createWindow() {
   mkArchetypeDir();
   watch();
   mainWindow = new BrowserWindow({
-    width: 1124, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false
+    width: 562, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false
   });
 
   // and load the index.html of the app.

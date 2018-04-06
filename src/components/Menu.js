@@ -33,7 +33,7 @@ class Menu extends Component {
         <Flex1 style={{textAlign: 'center'}}>
 
         </Flex1>
-        <Flex1 style={{textAlign: 'right', paddingRight: '40px'}}>
+        <Flex1 style={{textAlign: 'right', paddingRight: '10px'}}>
         <TitleA> Archetype 01.</TitleA>
         </Flex1>
         <hr></hr>

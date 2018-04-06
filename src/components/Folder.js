@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip'
 const path = require('path');
 const fs = require('fs');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
 const {foldersRemote} = require('electron').remote.require('./lib/remote') //
-const {syncDat} = require('electron').remote.require('./lib/create') // bar
-const {startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/preview') // bar
+const {syncDat} = require('electron').remote.require('./lib/create') //
+const {getDat} = require('electron').remote.require('./lib/link') //
+const {startLocalServer, stopLocalServer} = require('electron').remote.require('./lib/preview') //
 
 const {shell} = require('electron');
 
@@ -26,7 +28,6 @@ const LinkFolder = styled.a `
   margin-bottom: 40px;
   text-decoration: none;
   cursor: pointer;
-
 `
 
 const FolderLi = styled.li `
@@ -83,9 +84,17 @@ class Folder extends Component {
   openWeb = (url) => {
     shell.openExternal(`${url}`);
   }
+
   sync = () => {
     const { folderName } = this.props;
     syncDat(folderName);
+  }
+
+  getDatLink = () => {
+    const { folderName } = this.props;
+    getDat(folderName, (url) => {
+      shell.openExternal(`${url}`);
+    });
   }
 
   preview = () => {
@@ -113,9 +122,18 @@ class Folder extends Component {
     return (
       <FolderLi>
         <LinkFolder onClick={this.openLink}> {folderName}  </LinkFolder>
-        <SynctoDat onClick={this.sync} > ⟿ </SynctoDat>
-        <Preview onClick={this.preview} style={{color:this.state.color}} > ∴ </Preview>
-        <LinktoDat onClick={() => this.openWeb('dat://archetype.cc')} > ⋯ </LinktoDat>
+        <SynctoDat onClick={this.sync} data-tip data-for='sync'> ⟿ </SynctoDat>
+        <ReactTooltip id='sync' class='tooltip' type='error' effect='float' >
+          <span>Sync</span>
+        </ReactTooltip>
+        <Preview onClick={this.preview} style={{color:this.state.color}} data-tip data-for='preview' > ∴ </Preview>
+        <ReactTooltip id='preview' class='tooltip' type='error' effect='float' >
+          <span>Preview</span>
+        </ReactTooltip>
+        <LinktoDat onClick={this.getDatLink} data-tip data-for='open' > ⋯ </LinktoDat>
+        <ReactTooltip id='open' class='tooltip' type='error' effect='float' >
+          <span>Open in Beaker</span>
+        </ReactTooltip>
       </FolderLi>
     )
   }

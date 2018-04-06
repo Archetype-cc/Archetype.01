@@ -16,6 +16,11 @@ injectGlobal`
     -webkit-text-size-adjust: 100%;
   }
 
+  .tooltip {
+    text-align: center;
+    background: #E58E73;
+  }
+
   ul {
     margin: 0;
     padding: 0;

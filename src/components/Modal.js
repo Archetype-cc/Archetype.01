@@ -24,7 +24,7 @@ const InputBox = styled.input `
   background-color: rgba(16, 16, 16, 0.05);
   height: 50px;
   padding: 20px;
-  font-size: 80px;
+  font-size: 40px;
   color: #E58E73;
   border: none;
   border-bottom: 1px dashed grey;
@@ -35,7 +35,7 @@ const Cross = styled.button `
   position: absolute;
   right: 5%;
   top: 8%;
-  font-size: 40px;
+  font-size: 25px;
   color: gray;
   cursor: pointer;
   border: none;
@@ -44,6 +44,11 @@ const Cross = styled.button `
 
 const Name = styled.span `
   color: #E58E73
+`
+
+const SuccessMSG = styled.h1`
+  padding: 40px;
+  line-height: 42px;
 `
 
 const ExistingFolder = styled.div `
@@ -114,7 +119,7 @@ class Modal extends Component {
           <InputBox type='text' placeholder="Name of your project" value={value} onKeyDown={this.keyPress} onChange={this.handleChange}
           />
           :
-          <h1> <Name>{value}</Name> folder was created in your computer </h1>
+          <SuccessMSG> <Name>{value}</Name> folder was created in your computer with a DAT LINK. </SuccessMSG>
 
         }
 

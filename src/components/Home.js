@@ -56,9 +56,7 @@ class Home extends Component {
       <div>
         <Menu />
         <PageContainer>
-        <ListArea />
-        <Templates click={this.update}  />
-
+        <ListArea click={this.update} />
         {
           showModal
           ?

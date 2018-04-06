@@ -32,7 +32,7 @@ class ArchetypesList extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log("hitting")
+    console.log(nextProps)
     foldersRemote.readFolder().then(folders =>  this.setState({ folders }))
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ArchetypesList from './ArchetypesList';
+import CreatePlus from './CreatePlus';
 const path = require('path');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
@@ -19,6 +20,25 @@ const Heading = styled.h1 `
   width: 95%;
 `
 
+
+const HeadingInput = styled.p `
+  color: #white;
+  margin-bottom: 1px;
+  margin-top: 0px;
+`
+
+const ImportInput = styled.input `
+  border: none;
+  border-bottom: 1px solid #949494;
+  color: #dd896f;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  background: #0b0d0b;
+  border-radius: 1px;
+  letter-spacing: 0.3px;
+`
+
 const Line = styled.div `
   height: 0.3px;
   width: 100%;
@@ -34,7 +54,7 @@ const Button = styled.button `
   background: none;
   border: 1px solid white;
   color: white;
-  margin: 40px 5px 40px 5px;
+  margin: 50px 5px 40px 5px;
   float: left;
   padding: 10px;
   width: 120px;
@@ -47,6 +67,15 @@ const Button = styled.button `
 
 
 class ListArea extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      template: "",
+      showInput: true,
+      newFolder: true,
+    }
+  }
+
   openLink = (e) => {
     shell.showItemInFolder(`${argv.loc}`);
   }
@@ -55,14 +84,32 @@ class ListArea extends Component {
     shell.openExternal(`${url}`);
   }
 
+  handleChange = (e) => {
+   this.setState({
+     template: e.target.value,
+     newFolder: true
+    });
+  }
+
+  keyPress = (e) => {
+     if(e.keyCode == 13){
+
+        this.setState({ value: e.target.value});
+        this.props.click(this.state.template);
+
+     }
+  }
+
   render() {
     return  <DescriptionContainer>
 
-        <Heading>CREATE, EXHIBIT & SHARE YOUR ARTWORK.</Heading>
+        <Heading> PUBLISHING AS _________ PRACTICE. </Heading>
+        <CreatePlus click={() => this.props.click()} template={this.state.template} type={"new"} />
+
         <Line />
         <ArchetypesList />
         <hr></hr>
-        <Beta> This is a Beta Release, Please report any Bugs or Problems.</Beta>
+        <ImportInput type="text" placeholder="Or fork a dat link here. Ex. dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Button onClick={this.openLink}> My Archetypes </Button>
         <Button onClick={() =>  this.openWeb('https://archetype.cc')}> Archetype.cc </Button>
         <Button onClick={() => this.openWeb('https://archetype.cc')}> Feedback </Button>
