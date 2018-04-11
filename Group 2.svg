@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="621px" height="609px" viewBox="0 0 621 609" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6,0 L811,0 C814.313708,-6.08718376e-16 817,2.6862915 817,6 L817,543 C817,546.313708 814.313708,549 811,549 L195.630275,549 L6,549 C2.6862915,549 -4.82366169e-16,546.313708 -8.8817842e-16,543 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="path-1"></path>
+        <filter x="-6.4%" y="-6.8%" width="112.9%" height="119.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.197172619   0 0 0 0 0.197172619   0 0 0 0 0.197172619  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-4" cx="27.7330275" cy="27.75" rx="27.7330275" ry="27.75"></ellipse>
+        <rect id="path-6" x="0" y="0" width="62.9614679" height="63"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#F7F6F7" offset="0%"></stop>
+            <stop stop-color="#D7D5D7" offset="100%"></stop>
+        </linearGradient>
+        <path d="M6,0 L811,0 C814.313708,-6.08718376e-16 817,2.6862915 817,6 L817,37 L0,37 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="path-8"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#FEFEFE" offset="0%"></stop>
+            <stop stop-color="#F2F1F2" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-10" x="0" y="0" width="430" height="22" rx="4"></rect>
+        <filter x="-0.2%" y="-3.4%" width="100.3%" height="109.1%" filterUnits="objectBoundingBox" id="filter-11">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0.5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.650980392   0 0 0 0 0.643137255   0 0 0 0 0.650980392  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-12" cx="61.9342516" cy="19" r="6"></circle>
+        <circle id="path-13" cx="41.9342516" cy="19" r="6"></circle>
+        <circle id="path-14" cx="21.9342516" cy="19" r="6"></circle>
+        <ellipse id="path-15" cx="28" cy="27.5" rx="28" ry="27.5"></ellipse>
+        <rect id="path-17" x="0" y="0" width="63.5675676" height="62.4324324"></rect>
+        <ellipse id="path-18" cx="28" cy="27.5" rx="28" ry="27.5"></ellipse>
+        <rect id="path-20" x="0" y="0" width="63.5675676" height="62.4324324"></rect>
+        <circle id="path-21" cx="12.5" cy="12.5" r="12.5"></circle>
+        <rect id="path-23" x="0" y="0" width="28.030303" height="28.030303"></rect>
+        <ellipse id="path-24" cx="19.5" cy="19.5367232" rx="19.5" ry="19.5367232"></ellipse>
+        <rect id="path-26" x="0" y="0" width="44.2702703" height="44.3536418"></rect>
+        <path d="M0,78.5 L600.5,78.5" id="path-27"></path>
+        <filter x="-1.2%" y="-200.0%" width="102.3%" height="566.7%" filterUnits="objectBoundingBox" id="filter-28">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About" transform="translate(-819.000000, -260.000000)">
+            <g id="Group-2" transform="translate(849.000000, 275.000000)">
+                <g id="Browser">
+                    <g id="Rectangle-3-Copy-2">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="Group-Copy-4" mask="url(#mask-2)">
+                            <g transform="translate(162.650459, 511.500000)">
+                                <mask id="mask-5" fill="white">
+                                    <use xlink:href="#path-4"></use>
+                                </mask>
+                                <use id="Mask" stroke="none" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-4"></use>
+                                <g id="Group-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" mask="url(#mask-5)">
+                                    <g transform="translate(-4.497248, 0.000000)">
+                                        <g id="Rectangle-2" fill="none">
+                                            <use fill="#202020" fill-rule="evenodd" xlink:href="#path-6"></use>
+                                            <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="61.9614679" height="62"></rect>
+                                        </g>
+                                        <rect id="Rectangle-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="46.0035971" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-3" fill="#FFFFFF" fill-rule="evenodd" x="31.0277737" y="45.5503597" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy" fill="#B7B7B7" fill-rule="evenodd" x="15.4006468" y="30.5935252" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-2" fill="#737373" fill-rule="evenodd" x="0" y="30.8201439" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-4" fill="#FFFFFF" fill-rule="evenodd" x="30.5748135" y="15.4100719" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-5" fill="#FF7A7A" fill-rule="evenodd" x="15.4006468" y="15.4100719" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-6" fill="#6E6E6E" fill-rule="evenodd" x="46.4284206" y="45.323741" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-7" fill="#9013FE" fill-rule="evenodd" x="15.4006468" y="0" width="15.4006468" height="15.4100719"></rect>
+                                        <rect id="Rectangle-2-Copy-8" fill="#E3E3E3" fill-rule="evenodd" x="46.4284206" y="0" width="15.4006468" height="15.4100719"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <rect stroke="#E9EAED" mask="url(#mask-2)" x="118.927523" y="488" width="498.194495" height="105.5" rx="12"></rect>
+                    </g>
+                    <g id="Menu">
+                        <g id="Address-Bar-BG">
+                            <use fill="url(#linearGradient-7)" fill-rule="evenodd" xlink:href="#path-8"></use>
+                            <path stroke="#C1C1C1" stroke-width="0.5" d="M0.25,36.75 L816.75,36.75 L816.75,6 C816.75,2.82436269 814.175637,0.25 811,0.25 L6,0.25 C2.82436269,0.25 0.25,2.82436269 0.25,6 L0.25,36.75 Z"></path>
+                        </g>
+                        <g id="Address-Bar" transform="translate(193.500000, 7.000000)">
+                            <g id="Address-Bar-BG">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
+                                <use fill="url(#linearGradient-9)" fill-rule="evenodd" xlink:href="#path-10"></use>
+                                <rect stroke="#D2D0D2" stroke-width="0.5" x="-0.25" y="-0.25" width="430.5" height="22.5" rx="4"></rect>
+                            </g>
+                            <text id="dwritter.bit" font-family="Lars-Regular, Lars" font-size="13" font-weight="normal" fill="#0D0B00">
+                                <tspan x="182.7015" y="16">dwritter.bit</tspan>
+                            </text>
+                        </g>
+                        <g id="Fullscreen-Icon">
+                            <use fill="#909095" fill-rule="evenodd" xlink:href="#path-12"></use>
+                            <circle stroke="#6E6E71" stroke-width="0.5" cx="61.9342516" cy="19" r="5.75"></circle>
+                        </g>
+                        <g id="Hide-Icon">
+                            <use fill="#909095" fill-rule="evenodd" xlink:href="#path-13"></use>
+                            <circle stroke="#6E6E71" stroke-width="0.5" cx="41.9342516" cy="19" r="5.75"></circle>
+                        </g>
+                        <g id="Close-Icon">
+                            <use fill="#909095" fill-rule="evenodd" xlink:href="#path-14"></use>
+                            <circle stroke="#6E6E71" stroke-width="0.5" cx="21.9342516" cy="19" r="5.75"></circle>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle-3" fill="#60697A" opacity="0.137001812" x="125" y="95" width="499" height="55" rx="12"></rect>
+                <text id="You:" font-family="AvenirNext-DemiBold, Avenir Next" font-size="20" font-weight="500" fill="#000000">
+                    <tspan x="247" y="215">You:</tspan>
+                    <tspan x="247" y="242"></tspan>
+                </text>
+                <text id="You:" font-family="AvenirNext-DemiBold, Avenir Next" font-size="20" font-weight="500" fill="#000000">
+                    <tspan x="247" y="535">You:</tspan>
+                    <tspan x="247" y="562"></tspan>
+                </text>
+                <text id="DWRITTER." font-family="AvenirNext-DemiBold, Avenir Next" font-size="15" font-weight="500" fill="#767676">
+                    <tspan x="53" y="63">DWRITTER.</tspan>
+                    <tspan x="53" y="83"></tspan>
+                </text>
+                <g id="noun_24390_cc" transform="translate(17.000000, 46.000000)" fill="#60697A" fill-rule="nonzero">
+                    <path d="M10.7067024,17.363769 C13.8961196,17.0751264 16.1878447,16.2408468 16.1878447,16.2408468 L23,16.2408468 L19.8147229,15.5269738 L21.4364565,15.5269738 C21.4364565,13.8612702 17.5349577,13.3603693 16.2432748,13.2478154 L9.16500898,8.08127865 C8.91223841,7.89924104 8.63025778,7.73624004 8.3278071,7.63605987 C6.44318288,5.9346626 6.26079247,4.72488586 6.24791244,4.69752073 C5.95374178,2.38718981 5.41163056,1.50008365 5.38058049,1.46819732 C3.46053619,-1.24333021 1.6801022,0.631300234 1.6801022,0.631300234 L0.952610564,1.50579463 C0.952610564,1.50579463 -0.0228216228,1.96338721 0.000408429255,2.67726019 L0.952610564,2.67726019 C2.71671452,2.67726019 2.36136372,4.56117099 2.36136372,4.56117099 C1.78866244,8.25141837 2.09824313,9.98375014 2.09824313,9.98375014 C2.91865497,14.5568204 7.60997549,16.385763 7.60997549,16.385763 C9.31358931,17.4767989 9.03459869,18.7681951 9.03459869,18.7681951 L8.39243725,20.3296733 L5.94477176,21 L10.7688026,21 L9.14292893,20.325628 L9.43732959,19.6150864 C10.5986022,18.6682529 10.7067024,17.363769 10.7067024,17.363769 Z M3.01180518,1.41846417 C2.83332478,1.41846417 2.68819446,1.26831289 2.68819446,1.08294387 C2.68819446,0.897812813 2.83309478,0.74766153 3.01180518,0.74766153 C3.19051558,0.74766153 3.33518591,0.897812813 3.33518591,1.08294387 C3.33518591,1.26831289 3.19051558,1.41846417 3.01180518,1.41846417 Z" id="Shape"></path>
+                </g>
+                <g id="Group-Copy-2" transform="translate(161.000000, 202.000000)">
+                    <mask id="mask-16" fill="white">
+                        <use xlink:href="#path-15"></use>
+                    </mask>
+                    <use id="Mask" fill="#D8D8D8" xlink:href="#path-15"></use>
+                    <g mask="url(#mask-16)">
+                        <g transform="translate(-4.540541, 0.000000)">
+                            <g id="Rectangle-2" fill="none">
+                                <use fill="#202020" fill-rule="evenodd" xlink:href="#path-17"></use>
+                                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="62.5675676" height="61.4324324"></rect>
+                            </g>
+                            <rect id="Rectangle-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="45.5891503" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-3" fill="#FFFFFF" fill-rule="evenodd" x="31.3264632" y="45.1399961" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy" fill="#B7B7B7" fill-rule="evenodd" x="15.5489014" y="30.3179078" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-2" fill="#737373" fill-rule="evenodd" x="0" y="30.5424849" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-4" fill="#FFFFFF" fill-rule="evenodd" x="30.8691425" y="15.2712425" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-5" fill="#FF7A7A" fill-rule="evenodd" x="15.5489014" y="15.2712425" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-6" fill="#6E6E6E" fill-rule="evenodd" x="46.8753646" y="44.915419" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-7" fill="#9013FE" fill-rule="evenodd" x="15.5489014" y="0" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-8" fill="#E3E3E3" fill-rule="evenodd" x="46.8753646" y="0" width="15.5489014" height="15.2712425"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy-2" transform="translate(161.000000, 202.000000)">
+                    <mask id="mask-19" fill="white">
+                        <use xlink:href="#path-18"></use>
+                    </mask>
+                    <use id="Mask" fill="#D8D8D8" xlink:href="#path-18"></use>
+                    <g mask="url(#mask-19)">
+                        <g transform="translate(-4.540541, 0.000000)">
+                            <g id="Rectangle-2" fill="none">
+                                <use fill="#202020" fill-rule="evenodd" xlink:href="#path-20"></use>
+                                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="62.5675676" height="61.4324324"></rect>
+                            </g>
+                            <rect id="Rectangle-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="45.5891503" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-3" fill="#FFFFFF" fill-rule="evenodd" x="31.3264632" y="45.1399961" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy" fill="#B7B7B7" fill-rule="evenodd" x="15.5489014" y="30.3179078" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-2" fill="#737373" fill-rule="evenodd" x="0" y="30.5424849" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-4" fill="#FFFFFF" fill-rule="evenodd" x="30.8691425" y="15.2712425" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-5" fill="#FF7A7A" fill-rule="evenodd" x="15.5489014" y="15.2712425" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-6" fill="#6E6E6E" fill-rule="evenodd" x="46.8753646" y="44.915419" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-7" fill="#9013FE" fill-rule="evenodd" x="15.5489014" y="0" width="15.5489014" height="15.2712425"></rect>
+                            <rect id="Rectangle-2-Copy-8" fill="#E3E3E3" fill-rule="evenodd" x="46.8753646" y="0" width="15.5489014" height="15.2712425"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy-2" transform="translate(138.000000, 109.000000)">
+                    <mask id="mask-22" fill="white">
+                        <use xlink:href="#path-21"></use>
+                    </mask>
+                    <use id="Mask" fill="#D8D8D8" xlink:href="#path-21"></use>
+                    <g mask="url(#mask-22)">
+                        <g transform="translate(-2.272727, 0.000000)">
+                            <g id="Rectangle-2" fill="none">
+                                <use fill="#202020" fill-rule="evenodd" xlink:href="#path-23"></use>
+                                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="27.030303" height="27.030303"></rect>
+                            </g>
+                            <rect id="Rectangle-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="20.4681709" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-3" fill="#FFFFFF" fill-rule="evenodd" x="13.8134947" y="20.2665141" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy" fill="#B7B7B7" fill-rule="evenodd" x="6.85633312" y="13.6118378" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-2" fill="#737373" fill-rule="evenodd" x="0" y="13.7126662" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-4" fill="#FFFFFF" fill-rule="evenodd" x="13.6118378" y="6.85633312" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-5" fill="#FF7A7A" fill-rule="evenodd" x="6.85633312" y="6.85633312" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-6" fill="#6E6E6E" fill-rule="evenodd" x="20.6698278" y="20.1656856" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-7" fill="#9013FE" fill-rule="evenodd" x="6.85633312" y="0" width="6.85633312" height="6.85633312"></rect>
+                            <rect id="Rectangle-2-Copy-8" fill="#E3E3E3" fill-rule="evenodd" x="20.6698278" y="0" width="6.85633312" height="6.85633312"></rect>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle-3" stroke="#E9EAED" x="125.5" y="170.5" width="498" height="158" rx="12"></rect>
+                <g id="Group" transform="translate(180.000000, 341.000000)">
+                    <g id="Group-Copy-3" transform="translate(21.750000, 18.785311)">
+                        <mask id="mask-25" fill="white">
+                            <use xlink:href="#path-24"></use>
+                        </mask>
+                        <use id="Mask" fill="#D8D8D8" xlink:href="#path-24"></use>
+                        <g id="Group-Copy-2" mask="url(#mask-25)">
+                            <g transform="translate(-3.162162, 0.000000)">
+                                <g id="Rectangle-2" fill="none">
+                                    <use fill="#000000" fill-rule="evenodd" xlink:href="#path-26"></use>
+                                    <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43.2702703" height="43.3536418"></rect>
+                                </g>
+                                <rect id="Rectangle-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="32.3877312" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-3" fill="#FF7A7A" fill-rule="evenodd" x="21.816644" y="32.0686403" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy" fill="#D8CE00" fill-rule="evenodd" x="10.8286992" y="21.538639" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-2" fill="#FFFFFF" fill-rule="evenodd" x="0" y="21.6981845" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-4" fill="#ADADAD" fill-rule="evenodd" x="21.4981528" y="10.8490922" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-4" fill="#FFFFFF" fill-rule="evenodd" x="32.0386934" y="10.8490922" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-5" fill="#FFFFFF" fill-rule="evenodd" x="10.8286992" y="10.8490922" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-6" fill="#6E6E6E" fill-rule="evenodd" x="32.6453432" y="31.9090948" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-7" fill="#C3C3C3" fill-rule="evenodd" x="10.8286992" y="0" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-8" fill="#7D7D7D" fill-rule="evenodd" x="32.1486486" y="0" width="10.8286992" height="10.8490922"></rect>
+                                <rect id="Rectangle-2-Copy-9" fill="#3B3B3B" fill-rule="evenodd" x="32.1486486" y="21.6488013" width="10.8286992" height="10.8490922"></rect>
+                            </g>
+                        </g>
+                    </g>
+                    <rect id="Rectangle-3-Copy" stroke="#E9EAED" x="0.5" y="0.5" width="437" height="132" rx="12"></rect>
+                </g>
+                <text id="Inbox-–-Messagess" font-family="AvenirNext-Regular, Avenir Next" font-size="14" font-weight="normal" fill="#000000">
+                    <tspan x="433" y="60">Inbox – Messagess</tspan>
+                </text>
+                <text id="Profile-Messages-Fol" font-family="AvenirNext-Regular, Avenir Next" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="12" y="216">Profile</tspan>
+                    <tspan x="12" y="232">Messages</tspan>
+                    <tspan x="12" y="248"></tspan>
+                    <tspan x="12" y="264">Following (424)</tspan>
+                    <tspan x="12" y="280">Followers (212)</tspan>
+                    <tspan x="12" y="296"></tspan>
+                </text>
+                <text id="Settings" font-family="AvenirNext-Regular, Avenir Next" font-size="14" font-weight="normal" fill="#000000">
+                    <tspan x="17" y="537">Settings</tspan>
+                </text>
+                <text id="@You-Since-2018." font-family="AvenirNext-Regular, Avenir Next" font-size="14" font-weight="normal" fill="#000000">
+                    <tspan x="12" y="125">@You</tspan>
+                    <tspan x="12" y="144"></tspan>
+                    <tspan x="12" y="163">Since 2018.</tspan>
+                </text>
+                <g id="Path-2">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-28)" xlink:href="#path-27"></use>
+                    <use stroke="#979797" stroke-width="1" xlink:href="#path-27"></use>
+                </g>
+                <rect id="Rectangle-4" fill="#FFFFFF" x="178" y="109" width="441" height="28"></rect>
+                <path d="M153.311671,341 C151.711764,343.8 151.445113,348 157.666975,348 L157.666975,344.5 L163,349.75 L157.711417,355 L157.711417,351.5 C153.04502,351.5 150.956252,349.09375 151.000694,346.25 C151.000694,344.5 151.84509,342.575 153.311671,341 Z" id="Shape" fill="#CACACA" fill-rule="nonzero"></path>
+                <text id="Presto-:" font-family="AvenirNext-DemiBold, Avenir Next" font-size="15" font-weight="500" fill="#000000">
+                    <tspan x="266" y="373">Presto :</tspan>
+                </text>
+                <text id="Welcome-Back," font-family="AvenirNext-Regular, Avenir Next" font-size="12" font-weight="normal" fill="#A7A7A7">
+                    <tspan x="12" y="103">Welcome Back,</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

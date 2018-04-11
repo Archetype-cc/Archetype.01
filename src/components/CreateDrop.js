@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-const Create = styled.button`
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 0px 0px 0px;
-
-  &:hover {
-    cursor: pointer;
-    color: #E58E73;
-  }
-`
-
+import Dropzone from 'react-dropzone'
 const Icon = styled.svg`
   width: 21px;
   height: 21px;
@@ -25,28 +12,24 @@ const Icon = styled.svg`
   }
 `
 
-const ButtonContainer = styled.div`
-  padding-bottom: 0px;
-  margin: 0;
-  width: 30%;
-
-`
-const TextButton = styled.p`
-  color: white;
-  float: right;
-  margin-top: 2px;
-
-  &:hover {
-    cursor: pointer;
-    color: #E58E73;
+class FullScreen extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      files: []
+    }
   }
-`
 
-class CreatePlus extends Component {
+  onDrop = (files) => {
+    this.setState({
+      files
+    });
+  }
 
-  render () {
-    return <ButtonContainer onClick={() => this.props.click()}>
-      <Create>
+  render() {
+    return (
+      <section >
+        <div className="dropzone">
         <Icon viewBox="0 0 21 21" version="1.1" >
             <g id="Page-1" stroke="none" strokeWidth="1" >
                 <g id="Page-1-Copy" fill='grey'>
@@ -55,11 +38,15 @@ class CreatePlus extends Component {
                 </g>
             </g>
         </Icon>
-        <TextButton>Create New.</TextButton>
-      </Create>
-      </ButtonContainer>
-
+          <Dropzone className='dropbtn' onDrop={this.props.fileImport} >
+            Import files from Folder.
+          </Dropzone>
+        </div>
+      </section>
+    );
   }
 }
 
-export default CreatePlus;
+
+
+export default FullScreen;

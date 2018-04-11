@@ -121,7 +121,10 @@ class Folder extends Component {
 
     return (
       <FolderLi>
-        <LinkFolder onClick={this.openLink}> {folderName}  </LinkFolder>
+        <LinkFolder onClick={this.openLink} data-tip data-for='finder'> {folderName}  </LinkFolder>
+        <ReactTooltip id='finder' class='tooltip' type='error' effect='float' >
+          <span>Open in Finder</span>
+        </ReactTooltip>
         <SynctoDat onClick={this.sync} data-tip data-for='sync'> ⟿ </SynctoDat>
         <ReactTooltip id='sync' class='tooltip' type='error' effect='float' >
           <span>Sync</span>

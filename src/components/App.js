@@ -66,6 +66,23 @@ injectGlobal`
   	}
   }
 
+  .dropzone {
+    -webkit-flex: 1 auto;
+    -ms-flex: 1 auto;
+    flex: 1 auto;
+    width: 44%;
+    padding-bottom: 12px;
+  }
+
+  .dropbtn {
+    padding-bottom: 20px;
+    float: right;
+  }
+
+  .dropzone:hover {
+    cursor: pointer;
+  }
+
 `;
 
 

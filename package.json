@@ -50,6 +50,7 @@
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
     "random-access-memory": "^2.4.0",
+    "react-dropzone": "^4.2.9",
     "react-switch-case": "^1.0.3",
     "react-tooltip": "^3.4.1",
     "stoppable": "^1.0.5",

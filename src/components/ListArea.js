@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ArchetypesList from './ArchetypesList';
 import CreatePlus from './CreatePlus';
+import CreateDrop from './CreateDrop';
 const path = require('path');
 var userHome = require('user-home');
 var argv = require('minimist')(process.argv.slice(2));
@@ -94,9 +95,10 @@ class ListArea extends Component {
   keyPress = (e) => {
      if(e.keyCode == 13){
 
-        this.setState({ value: e.target.value});
+        this.setState({
+          value: e.target.value,
+        });
         this.props.click(this.state.template);
-
      }
   }
 
@@ -104,8 +106,8 @@ class ListArea extends Component {
     return  <DescriptionContainer>
 
         <Heading> PUBLISHING AS _________ PRACTICE. </Heading>
-        <CreatePlus click={() => this.props.click()} template={this.state.template} type={"new"} />
-
+        <CreatePlus click={() => this.props.click("starter")} template={this.state.template} type={"new"} />
+        <CreateDrop click={() => this.props.click()} fileImport={this.props.fileImport} template={"none"} type={"new"} />
         <Line />
         <ArchetypesList />
         <hr></hr>

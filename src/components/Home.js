@@ -31,7 +31,8 @@ class Home extends Component {
       showModal: false,
       name: '',
       hex: '',
-      template: ''
+      template: '',
+      files: []
     }
   }
 
@@ -44,29 +45,41 @@ class Home extends Component {
 
   remove = () => {
     this.setState({
-      showModal: false
+      showModal: false,
+      template: ''
     })
   }
 
+  onDrop = (files) => {
+    this.setState({
+      files
+    });
+    this.update();
+    this.noTemplate();
+  }
+
+  noTemplate = () => {
+    this.setState({
+      template: 'none',
+    });
+  }
 
   render () {
-    const { showModal, template } = this.state;
-
+    const { showModal, template, files } = this.state;
     return (
       <div>
         <Menu />
         <PageContainer>
-        <ListArea click={this.update} />
+        <ListArea click={this.update} fileImport={this.onDrop} />
         {
           showModal
           ?
-          <Modal remove={this.remove} template={template} />
+          <Modal remove={this.remove} template={template} files={files} />
           :
           null
         }
 
         </PageContainer>
-
       </div>
     )
   }

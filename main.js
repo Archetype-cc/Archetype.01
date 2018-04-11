@@ -7,9 +7,11 @@ const { mkProjectDir, mkArchetypeDir, mkDir, writeFile } = require('./lib/filesy
 const { watch } = require('./lib/watch');
 const { createDat, versionDat } = require('./lib/dat');
 
-
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+// Keep a reference for dev mode
 let dev = false;
 if (process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath)) {
   dev = true;
@@ -51,6 +53,7 @@ function createWindow() {
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
+
     mainWindow = null;
   });
 }
