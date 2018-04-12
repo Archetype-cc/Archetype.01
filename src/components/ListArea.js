@@ -114,7 +114,7 @@ class ListArea extends Component {
         <ImportInput type="text" placeholder="Or fork a dat link here. Ex. dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Button onClick={this.openLink}> My Archetypes </Button>
         <Button onClick={() =>  this.openWeb('https://archetype.cc')}> Archetype.cc </Button>
-        <Button onClick={() => this.openWeb('https://github.com/Archetype-cc')}> Feedback </Button>
+        <Button onClick={() => this.openWeb('dat://gallery.archetype.cc')}> Gallery </Button>
         <Button onClick={() => this.openWeb('https://github.com/Archetype-cc')}> Developers </Button>
 
       </DescriptionContainer>;
