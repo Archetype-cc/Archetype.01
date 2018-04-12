@@ -4,6 +4,7 @@
 # dist
 dist/
 builds/
+Icons/
 
 # misc
 *npm-debug.log
