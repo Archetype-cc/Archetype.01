@@ -15,8 +15,13 @@ const FolderListContainer = styled.div `
   overflow: scroll;
 `
 
-const Ulist = styled.ul `
+const Ulist = styled.ul`
   line-height: 2.6rem;
+`
+
+const Titlep = styled.div `
+  margin-top: 30px;
+  margin-bottom: 10px;
 `
 
 class ArchetypesList extends Component {
@@ -32,7 +37,6 @@ class ArchetypesList extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps)
     foldersRemote.readFolder().then(folders =>  this.setState({ folders }))
   }
 
@@ -43,7 +47,7 @@ class ArchetypesList extends Component {
     return  (
 
       <div>
-        <p> My Archetypes </p>
+        <Titlep> My Archetypes </Titlep>
         <FolderListContainer>
           <Ulist>
 

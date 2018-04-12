@@ -39,7 +39,7 @@ class FullScreen extends Component {
             </g>
         </Icon>
           <Dropzone className='dropbtn' onDrop={this.props.fileImport} >
-            Import files from Folder.
+            Import files from a folder.
           </Dropzone>
         </div>
       </section>

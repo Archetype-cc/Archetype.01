@@ -4,10 +4,25 @@ const {ipcRenderer} = require('electron')
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
+
+@font-face {
+    font-family: 'lunchtype22regular';
+    src: url('./assets/fonts/lunchtype22-regular-webfont.eot');
+    src: url('./assets/fonts/lunchtype22-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./assets/fonts/lunchtype22-regular-webfont.woff2') format('woff2'),
+         url('./assets/fonts/lunchtype22-regular-webfont.woff') format('woff'),
+         url('./assets/fonts/lunchtype22-regular-webfont.ttf') format('truetype'),
+         url('./assets/fonts/lunchtype22-regular-webfont.svg#lunchtype22regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+
+}
+
   body {
     background: #0B0D0B;
     color: white;
-    font-family: "Lars", arial;
+    font-family:'lunchtype22regular', arial;
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
@@ -70,12 +85,13 @@ injectGlobal`
     -webkit-flex: 1 auto;
     -ms-flex: 1 auto;
     flex: 1 auto;
-    width: 44%;
+    width: 45%;
     padding-bottom: 12px;
   }
 
   .dropbtn {
     padding-bottom: 20px;
+    padding-right: 0px;
     float: right;
   }
 

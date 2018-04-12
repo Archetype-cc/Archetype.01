@@ -1,11 +1,13 @@
 'use strict';
 
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 const { mkProjectDir, mkArchetypeDir, mkDir, writeFile } = require('./lib/filesystem');
 const { watch } = require('./lib/watch');
+const { foldersRemote } = require('./lib/remote');
 const { createDat, versionDat } = require('./lib/dat');
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,10 +20,32 @@ if (process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) |
 }
 
 function createWindow() {
+  // Create the Application's main menu
+var template = [{
+    label: "Application",
+    submenu: [
+        { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+        { type: "separator" },
+        { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+    ]}, {
+    label: "Edit",
+    submenu: [
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+        { type: "separator" },
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+    ]}
+];
+
+Menu.setApplicationMenu(Menu.buildFromTemplate(template));
   mkArchetypeDir();
   watch();
   mainWindow = new BrowserWindow({
-    width: 562, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false
+    width: 562, height: 768, show: false, titleBarStyle: 'hiddenInset', resizable: false, webPreferences: {nodeIntegration: true}
+
   });
 
   // and load the index.html of the app.
@@ -47,7 +71,7 @@ function createWindow() {
     mainWindow.show();
     // Open the DevTools automatically if developing
     if ( dev ) {
-      // mainWindow.webContents.openDevTools();
+      mainWindow.webContents.openDevTools();
     }
   });
 

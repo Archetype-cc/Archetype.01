@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import CreateButton from './CreateButton';
 import ListArea from './ListArea';
-import Templates from './Templates';
 import Modal from './Modal';
 
 import Menu from './Menu';
 
-const {ipcRenderer} = require('electron');
-
-
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
-  console.log(arg) // prints "pong"
-})
 
 const PageContainer = styled.div`
   display: flex;

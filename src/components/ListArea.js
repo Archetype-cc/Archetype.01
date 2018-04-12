@@ -55,7 +55,7 @@ const Button = styled.button `
   background: none;
   border: 1px solid white;
   color: white;
-  margin: 50px 5px 40px 5px;
+  margin: 30px 5px 40px 5px;
   float: left;
   padding: 10px;
   width: 120px;
@@ -105,7 +105,7 @@ class ListArea extends Component {
   render() {
     return  <DescriptionContainer>
 
-        <Heading> PUBLISHING AS _________ PRACTICE. </Heading>
+        <Heading> PUBLISHING AS _______ PRACTICE. </Heading>
         <CreatePlus click={() => this.props.click("starter")} template={this.state.template} type={"new"} />
         <CreateDrop click={() => this.props.click()} fileImport={this.props.fileImport} template={"none"} type={"new"} />
         <Line />
@@ -114,8 +114,8 @@ class ListArea extends Component {
         <ImportInput type="text" placeholder="Or fork a dat link here. Ex. dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Button onClick={this.openLink}> My Archetypes </Button>
         <Button onClick={() =>  this.openWeb('https://archetype.cc')}> Archetype.cc </Button>
-        <Button onClick={() => this.openWeb('https://archetype.cc')}> Feedback </Button>
-        <Button onClick={() => this.openWeb('https://github.io/archetype-cc')}> Developers </Button>
+        <Button onClick={() => this.openWeb('https://github.com/Archetype-cc')}> Feedback </Button>
+        <Button onClick={() => this.openWeb('https://github.com/Archetype-cc')}> Developers </Button>
 
       </DescriptionContainer>;
   }
