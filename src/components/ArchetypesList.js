@@ -53,7 +53,7 @@ class ArchetypesList extends Component {
 
           {
             folders.map((name, i) =>  {
-              if (name !== '.DS_Store' && name !== ".archetype.lock" && name !== ".dat") {
+              if (name !== '.DS_Store' && name !== ".archetype.lock" && name !== ".dat" && name !== "feed.json") {
                 return  <Folder key={i} folderName={name} port={i*1000} />
               }
             })
