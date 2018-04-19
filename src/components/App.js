@@ -19,6 +19,22 @@ injectGlobal`
 
 }
 
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+p {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
   body {
     background: #0B0D0B;
     color: white;
@@ -84,15 +100,22 @@ injectGlobal`
   .dropzone {
     -webkit-flex: 1 auto;
     -ms-flex: 1 auto;
+    -webkit-flex: 1 auto;
+    -ms-flex: 1 auto;
     flex: 1 auto;
-    width: 45%;
-    padding-bottom: 12px;
+    /* width: 86%; */
+    float: right;
   }
 
   .dropbtn {
-    padding-bottom: 20px;
     padding-right: 0px;
-    float: right;
+    height: 22px;
+    float: left;
+  }
+
+  .dropbtn:hover{
+    cursor: pointer;
+    color: #E58E73;
   }
 
   .dropzone:hover {

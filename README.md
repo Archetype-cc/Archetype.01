@@ -2,9 +2,12 @@
 
 ## Todo
 
+- [ ] Starter Theme *** High Sierra
 - [ ] Add Documentation.
-- [ ] Add Option to drop entire folders. 
+- [ ] Add Option to drop entire folders.
 - [ ] Create Archetype Index with sublinks
+- [ ] Sync and Open Folder Feedback
+- [ ] Add copy to clipboard link
 - [ ] Clean up Code !!!
 - [X] Add dat.json to folder
 - [X] Add import theme from dat link

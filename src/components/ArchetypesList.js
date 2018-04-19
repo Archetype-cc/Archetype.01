@@ -20,7 +20,7 @@ const Ulist = styled.ul`
 `
 
 const Titlep = styled.div `
-  margin-top: 30px;
+  margin-top: 55px;
   margin-bottom: 10px;
 `
 
@@ -47,7 +47,7 @@ class ArchetypesList extends Component {
     return  (
 
       <div>
-        <Titlep> My Archetypes </Titlep>
+        <Titlep> • My Archetypes </Titlep>
         <FolderListContainer>
           <Ulist>
 

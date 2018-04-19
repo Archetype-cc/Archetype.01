@@ -47,6 +47,11 @@ const SynctoDat = styled.span `
   float: right;
   margin-right: 15px;
   cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+    color: #E58E73;
+  }
 `
 
 const Preview = styled.span `
@@ -55,6 +60,11 @@ const Preview = styled.span `
   float: right;
   margin-right: 15px;
   cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+    color: #E58E73;
+  }
 `
 
 const SyncSpan = styled.button `
