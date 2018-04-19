@@ -2,7 +2,7 @@
 
 ## Todo
 
-- [ ] Starter Theme *** High Sierra
+- [x] Starter Theme
 - [ ] Add Documentation.
 - [ ] Add Option to drop entire folders.
 - [ ] Create Archetype Index with sublinks
