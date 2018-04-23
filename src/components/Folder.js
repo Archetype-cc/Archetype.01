@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import copy from 'copy-to-clipboard';
 import ReactTooltip from 'react-tooltip'
 const path = require('path');
 const fs = require('fs');
@@ -107,6 +108,13 @@ class Folder extends Component {
     });
   }
 
+  copyToClipboard = (url) => {
+    const { folderName } = this.props;
+    getDat(folderName, (url) => {
+      copy(url);
+    });
+  }
+
   preview = () => {
     const { folderName, port } = this.props;
 
@@ -131,6 +139,10 @@ class Folder extends Component {
 
     return (
       <FolderLi>
+        <LinktoDat onClick={this.copyToClipboard} data-tip data-for='copy' > ⧉ </LinktoDat>
+        <ReactTooltip id='copy' class='tooltip' type='error' effect='float' >
+          <span>Copy to Clipboard</span>
+        </ReactTooltip>
         <LinkFolder onClick={this.openLink} data-tip data-for='finder'> {folderName}  </LinkFolder>
         <ReactTooltip id='finder' class='tooltip' type='error' effect='float' >
           <span>Open in Finder</span>
@@ -147,6 +159,7 @@ class Folder extends Component {
         <ReactTooltip id='open' class='tooltip' type='error' effect='float' >
           <span>Open in Beaker</span>
         </ReactTooltip>
+
       </FolderLi>
     )
   }

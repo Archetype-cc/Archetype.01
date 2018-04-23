@@ -40,6 +40,7 @@
   "dependencies": {
     "async": "^2.6.0",
     "chokidar": "^2.0.2",
+    "copy-to-clipboard": "^3.0.8",
     "dat": "^13.10.0",
     "dat-node": "^3.5.8",
     "electron-default-menu": "^1.0.1",
@@ -50,6 +51,7 @@
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
     "random-access-memory": "^2.4.0",
+    "react": "^16.3.2",
     "react-dropzone": "^4.2.9",
     "react-switch-case": "^1.0.3",
     "react-tooltip": "^3.4.1",
