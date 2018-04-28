@@ -1,7 +1,7 @@
 <h1 align="center">Archetype #01</h1>
 
 <p align="center">
-  <img src="./imgs/archetype.png" alt="Archetype 01" width:'400px' >
+  <img src="./imgs/archetype1.png" alt="Archetype 01" width="300" >
 </p>
 
 
