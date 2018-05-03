@@ -43,7 +43,8 @@ class ArchetypesList extends Component {
   render() {
     const { folders } = this.state;
     // console.log(this.state.folders);
-
+    const { updateLogMsg } = this.props;
+    
     return  (
 
       <div>
@@ -54,7 +55,7 @@ class ArchetypesList extends Component {
           {
             folders.map((name, i) =>  {
               if (name !== '.DS_Store' && name !== ".archetype.lock" && name !== ".dat" && name !== "feed.json") {
-                return  <Folder key={i} folderName={name} port={i*1000} />
+                return  <Folder key={i} folderName={name} port={i*1000} updateLogMsg={updateLogMsg}/>
               }
             })
           }

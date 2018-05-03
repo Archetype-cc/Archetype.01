@@ -83,7 +83,7 @@ class Folder extends Component {
     super(props);
     this.state = {
       serving: false,
-      color: 'grey'
+      color: 'grey',
     }
   }
 
@@ -97,8 +97,9 @@ class Folder extends Component {
   }
 
   sync = () => {
-    const { folderName } = this.props;
-    syncDat(folderName);
+    const { folderName, updateLogMsg } = this.props;
+    syncDat(folderName);  
+    updateLogMsg('Synced!', 'SHOW');
   }
 
   getDatLink = () => {
@@ -109,9 +110,10 @@ class Folder extends Component {
   }
 
   copyToClipboard = (url) => {
-    const { folderName } = this.props;
+    const { folderName, updateLogMsg } = this.props;
     getDat(folderName, (url) => {
       copy(url);
+      updateLogMsg('Link Copied!', 'SHOW');
     });
   }
 
@@ -140,23 +142,23 @@ class Folder extends Component {
     return (
       <FolderLi>
         <LinktoDat onClick={this.copyToClipboard} data-tip data-for='copy' > ⧉ </LinktoDat>
-        <ReactTooltip id='copy' class='tooltip' type='error' effect='float' >
+        <ReactTooltip id='copy' className='tooltip' type='error' effect='float' >
           <span>Copy to Clipboard</span>
         </ReactTooltip>
         <LinkFolder onClick={this.openLink} data-tip data-for='finder'> {folderName}  </LinkFolder>
-        <ReactTooltip id='finder' class='tooltip' type='error' effect='float' >
+        <ReactTooltip id='finder' className='tooltip' type='error' effect='float' >
           <span>Open in Finder</span>
         </ReactTooltip>
         <SynctoDat onClick={this.sync} data-tip data-for='sync'> ⟿ </SynctoDat>
-        <ReactTooltip id='sync' class='tooltip' type='error' effect='float' >
+        <ReactTooltip id='sync' className='tooltip' type='error' effect='float' >
           <span>Sync</span>
         </ReactTooltip>
         <Preview onClick={this.preview} style={{color:this.state.color}} data-tip data-for='preview' > ∴ </Preview>
-        <ReactTooltip id='preview' class='tooltip' type='error' effect='float' >
+        <ReactTooltip id='preview' className='tooltip' type='error' effect='float' >
           <span>Preview</span>
         </ReactTooltip>
         <LinktoDat onClick={this.getDatLink} data-tip data-for='open' > ⋯ </LinktoDat>
-        <ReactTooltip id='open' class='tooltip' type='error' effect='float' >
+        <ReactTooltip id='open' className='tooltip' type='error' effect='float' >
           <span>Open in Beaker</span>
         </ReactTooltip>
 

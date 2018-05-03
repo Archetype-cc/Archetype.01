@@ -121,7 +121,37 @@ p {
   .dropzone:hover {
     cursor: pointer;
   }
+  
+  @keyframes activateBanner {
+    from {
+      top: -53px;
+      opacity: 0;
+    }
+    to {
+      top: 0px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes deactivateBanner {
+    from {
+      top: 0px;
+    }
+    to {
+      top: -53px;
+    }
+  }
 
+  .bannerDeactivated{
+    -webkit-animation: deactivateBanner 3s 1; /* Safari 4.0 - 8.0 */
+    animation: deactivateBanner 3s 1;
+  }
+
+  
+  .bannerActived{
+    -webkit-animation: activateBanner 2s 1; /* Safari 4.0 - 8.0 */
+    animation: activateBanner 2s 1;
+  }
 `;
 
 

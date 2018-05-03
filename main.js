@@ -7,6 +7,8 @@ const { mkProjectDir, mkArchetypeDir, mkDir, writeFile } = require('./lib/filesy
 const { watch } = require('./lib/watch');
 const { foldersRemote } = require('./lib/remote');
 const { createDat, versionDat } = require('./lib/dat');
+// const update = require('update-electron-app')()
+
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -65,6 +67,7 @@ Menu.setApplicationMenu(Menu.buildFromTemplate(template));
     });
   }
   mainWindow.loadURL( indexPath );
+
 
   // Don't show until we are ready and loaded
   mainWindow.once('ready-to-show', () => {

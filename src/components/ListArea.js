@@ -110,12 +110,14 @@ class ListArea extends Component {
   }
 
   render() {
+    const { updateLogMsg } = this.props;
+    
     return  <DescriptionContainer>
 
         <Heading> PUBLISHING AS <SpanLine>_______</SpanLine> PRACTICE. </Heading>
         <CreatePlus click={() => this.props.click("starter")} template={this.state.template} type={"new"} />
         <CreateDrop click={() => this.props.click()} fileImport={this.props.fileImport} template={"none"} type={"new"} />
-        <ArchetypesList />
+        <ArchetypesList updateLogMsg={updateLogMsg} />
         <hr></hr>
         <ImportInput type="text" placeholder="Or fork a dat link here. Ex. dat://2es4w56sd6dff...." template={this.state.template} onKeyDown={this.keyPress} onChange={this.handleChange}/>
         <Button onClick={this.openLink}> My Archetypes </Button>

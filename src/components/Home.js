@@ -19,6 +19,8 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
+      logMsg: '',
+      logStatus: 'OFF',
       showModalName: false,
       showModalHex: false,
       showModal: false,
@@ -56,14 +58,20 @@ class Home extends Component {
       template: 'none',
     });
   }
+  
+  updateLogMsg = (logMsg, logStatus) => {
+    this.setState({ logMsg, logStatus });
+    setTimeout(() => { this.updateLogMsg('', 'HIDE') } , 2000);
+  }
 
   render () {
-    const { showModal, template, files } = this.state;
+    const { showModal, template, files, logMsg, logStatus} = this.state;
+    
     return (
       <div>
-        <Menu />
+        <Menu logMsg={logMsg} logStatus={logStatus} />
         <PageContainer>
-        <ListArea click={this.update} fileImport={this.onDrop} />
+        <ListArea click={this.update} fileImport={this.onDrop} updateLogMsg={this.updateLogMsg}/>
         {
           showModal
           ?

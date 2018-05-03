@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Flex1 } from './Styles';
+import Feedback from './Feedback';
 
 const MenuContainer = styled.div `
   height: 50px;
@@ -24,9 +25,12 @@ const TitleA = styled.h1 `
 class Menu extends Component {
 
   render(){
-
+    const { logMsg, logStatus } = this.props;
+    
     return (
       <div>
+      <Feedback logMsg={logMsg} logStatus={logStatus}/>
+
         <MenuContainer>
         <Flex1 style={{paddingLeft: '20px'}} >
         </Flex1>
