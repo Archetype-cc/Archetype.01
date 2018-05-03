@@ -143,14 +143,14 @@ p {
   }
 
   .bannerDeactivated{
-    -webkit-animation: deactivateBanner 3s 1; /* Safari 4.0 - 8.0 */
-    animation: deactivateBanner 3s 1;
+    -webkit-animation: deactivateBanner 1.5s 1; /* Safari 4.0 - 8.0 */
+    animation: deactivateBanner 1.5s 1;
   }
 
   
   .bannerActived{
-    -webkit-animation: activateBanner 2s 1; /* Safari 4.0 - 8.0 */
-    animation: activateBanner 2s 1;
+    -webkit-animation: activateBanner 1.5s 1; /* Safari 4.0 - 8.0 */
+    animation: activateBanner 1.5s 1;
   }
 `;
 

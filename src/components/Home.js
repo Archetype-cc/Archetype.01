@@ -61,7 +61,7 @@ class Home extends Component {
   
   updateLogMsg = (logMsg, logStatus) => {
     this.setState({ logMsg, logStatus });
-    setTimeout(() => { this.updateLogMsg('', 'HIDE') } , 2000);
+    setTimeout(() => { this.updateLogMsg('', 'HIDE') } , 1400);
   }
 
   render () {
