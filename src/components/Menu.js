@@ -26,7 +26,7 @@ class Menu extends Component {
 
   render(){
     const { logMsg, logStatus } = this.props;
-    
+
     return (
       <div>
       <Feedback logMsg={logMsg} logStatus={logStatus}/>
@@ -38,7 +38,7 @@ class Menu extends Component {
 
         </Flex1>
         <Flex1 style={{textAlign: 'right', paddingRight: '10px'}}>
-        <TitleA> Archetype 01.</TitleA>
+        <TitleA className='title'> Archetype 01.</TitleA>
         </Flex1>
         <hr></hr>
 

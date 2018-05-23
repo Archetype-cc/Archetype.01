@@ -23,19 +23,21 @@ class Feedback extends Component {
   render() {
     const { logMsg, showLog, logStatus } = this.props;
     let styleBanner = '';
-    
+
     if (logStatus === 'SHOW'){
-      styleBanner = 'bannerActived';
-    } else if (logStatus === 'HIDE') {
-      styleBanner = 'bannerDeactivated';  
-    } else {
-      styleBanner = ''
+      let title = document.querySelector('.title');
+      title.innerText = logMsg;
+      title.style.color = '#E58E73'
+      setTimeout(() => {
+        title.innerText = 'Archetype.01'
+        title.style.color = 'white'
+      } , 2000);
     }
-    
+
     return (
       <Container>
-        <Banner className={styleBanner}> 
-          <Text>{logMsg}</Text> 
+        <Banner className={styleBanner}>
+          <Text>{logMsg}</Text>
         </Banner>
       </Container>
 

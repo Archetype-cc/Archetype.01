@@ -58,15 +58,15 @@ class Home extends Component {
       template: 'none',
     });
   }
-  
+
   updateLogMsg = (logMsg, logStatus) => {
     this.setState({ logMsg, logStatus });
-    setTimeout(() => { this.updateLogMsg('', 'HIDE') } , 1400);
+    // setTimeout(() => { this.updateLogMsg('', 'HIDE') } , 2000);
   }
 
   render () {
     const { showModal, template, files, logMsg, logStatus} = this.state;
-    
+
     return (
       <div>
         <Menu logMsg={logMsg} logStatus={logStatus} />

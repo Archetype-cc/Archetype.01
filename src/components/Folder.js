@@ -98,8 +98,8 @@ class Folder extends Component {
 
   sync = () => {
     const { folderName, updateLogMsg } = this.props;
-    syncDat(folderName);  
-    updateLogMsg('Synced!', 'SHOW');
+    syncDat(folderName);
+    updateLogMsg('Synced !', 'SHOW');
   }
 
   getDatLink = () => {
@@ -113,7 +113,7 @@ class Folder extends Component {
     const { folderName, updateLogMsg } = this.props;
     getDat(folderName, (url) => {
       copy(url);
-      updateLogMsg('Link Copied!', 'SHOW');
+      updateLogMsg('Copied to Clipboard !', 'SHOW');
     });
   }
 
